@@ -1,0 +1,33 @@
+
+; Make sure to update the epoch time in the SOA records so coreDNS picks up the changes automatically
+; https://www.epochconverter.com/
+
+; SOA Records
+$TTL 3600
+$ORIGIN 0.10.in-addr.arpa.
+@ 3600 IN SOA gateway.sblan.network. gateway.sblan.network. (
+  1701478949         ; serial number (epoch timestamp)
+  7200               ; refresh period
+  3600               ; retry period
+  1209600            ; expire time
+  3600               ; minimum ttl
+)
+
+; NS Records
+@                          IN  NS gateway.sblan.network.
+
+; Reset origin
+$ORIGIN in-addr.arpa.
+
+; LAN
+254.100.0.10                IN  PTR  gateway.sblan.network.
+
+; Servers
+2.100.0.10                  IN PTR nas01.sblan.network. 
+3.100.0.10                  IN PTR nas02.sblan.network. 
+4.100.0.10                  IN PTR k3s-01.sblan.network. 
+5.100.0.10                  IN PTR app01.sblan.netowrk.
+10.100.0.10                 IN PTR git.sblan.network. 
+23.100.0.10                 IN PTR pxsrv01.sblan.network. 
+24.100.0.10                 IN PTR pxsrv02.sblan.network. 
+25.100.0.10                 IN PTR pxsrv03.sblan.network. 
