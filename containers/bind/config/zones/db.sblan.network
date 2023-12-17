@@ -6,7 +6,7 @@
 $TTL 3600
 $ORIGIN sblan.network.
 @ 3600 IN SOA gateway.sblan.network. gateway.sblan.network. (
-  1702692820         ; serial number (epoch timestamp)
+  1702857382         ; serial number (epoch timestamp)
   7200               ; refresh period
   3600               ; retry period
   1209600            ; expire time
@@ -20,11 +20,18 @@ $ORIGIN sblan.network.
 gateway                       IN  A  10.0.100.254
 
 ; Servers
+bookstack                     IN CNAME app01
+cdio                          IN CNAME app01
+git                           IN CNAME app01
+homepage                      IN CNAME app01
+netboot                       IN CNAME app01
+pma                           IN CNAME app01
+portainer                     IN CNAME app01
+knx-sb-uk1                    IN CNAME app01
 nas01                         IN A 10.0.100.2
 nas02                         IN A 10.0.100.3
 k3s-01                        IN A 10.0.100.4
 app01                         IN A 10.0.100.5
-git                           IN CNAME app01
 gitea                         IN A 10.0.100.10
 pxsrv01                       IN A 10.0.100.23
 pxsrv02                       IN A 10.0.100.24
